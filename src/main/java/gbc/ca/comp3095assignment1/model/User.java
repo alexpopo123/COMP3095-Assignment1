@@ -17,7 +17,7 @@ public class User {
     private String email;
 
     public User() {
-        // Default constructor
+
     }
 
     public User(String username, String email) {
@@ -49,5 +49,5 @@ public class User {
         this.email = email;
     }
 
-    // You can add more methods and fields as needed
+
 }
