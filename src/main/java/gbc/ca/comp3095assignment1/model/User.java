@@ -1,23 +1,17 @@
 package gbc.ca.comp3095assignment1.model;
 
-import jakarta.persistence.Column;
-import jakarta.persistence.Entity;
-import jakarta.persistence.GeneratedValue;
-import jakarta.persistence.GenerationType;
-import jakarta.persistence.Id;
+import org.springframework.data.annotation.Id;
+import org.springframework.data.mongodb.core.mapping.Document;
 
-@Entity
+@Document
 public class User {
     @Id
-    @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long id;
 
-    @Column(unique = true)
     private String username;
     private String email;
 
     public User() {
-
     }
 
     public User(String username, String email) {
@@ -48,6 +42,4 @@ public class User {
     public void setEmail(String email) {
         this.email = email;
     }
-
-
 }

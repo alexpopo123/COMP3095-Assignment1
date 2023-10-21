@@ -19,37 +19,31 @@ public class UserService {
 
     // Create a new user
     public User createUser(User user) {
-
         return userRepository.save(user);
     }
 
     // Get all users
     public List<User> getAllUsers() {
-
         return userRepository.findAll();
     }
 
     // Get a user by ID
     public Optional<User> getUserById(Long id) {
-
         return userRepository.findById(id);
     }
 
     // Update a user by ID
     public User updateUser(Long id, User updatedUser) {
-
         if (userRepository.existsById(id)) {
-            updatedUser.setId(id); // Set the ID for the updated user
-            return userRepository.save(updatedUser); // Save the updated user
+            updatedUser.setId(id);
+            return userRepository.save(updatedUser);
         } else {
-
             return null;
         }
     }
 
     // Delete a user by ID
     public void deleteUser(Long id) {
-
         userRepository.deleteById(id);
     }
 }
